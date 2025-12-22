@@ -1,0 +1,12 @@
+debug/
+file-history/
+plans/
+plugins/
+projects/
+session-env/
+shell-snapshots/
+statsig/
+todos/
+.credentials.json
+history.jsonl
+stats-cache.json

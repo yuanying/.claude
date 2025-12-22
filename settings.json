@@ -1,0 +1,30 @@
+{
+  "permissions": {
+    "allow": [
+      "Update(**/*)",
+      "Edit(**/*)",
+      "Read(**/*)",
+      "Bash(git status)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(wc:*)",
+      "Bash(grep:*)",
+      "Bash(mkdir -p:*)",
+      "Bash(find:*)"
+    ],
+    "deny": [
+      "Update(~/**)",
+      "Edit(~/**)",
+      "Read(~/**)",
+      "Update(/**)",
+      "Edit(/**)",
+      "Read(/**)",
+      "Bash(mkdir -p /**)",
+      "Bash(mkdir -p ~/**)",
+      "Bash(rm -rf ~/**)",
+      "Bash(rm -r ~/**)",
+      "Bash(rm -rf /**)",
+      "Bash(rm -r /**)"
+    ]
+  }
+}
