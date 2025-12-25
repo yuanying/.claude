@@ -50,7 +50,7 @@ git commit --fixup=<commit-hash-of-original-change>
 
 ### 4. PRの更新
 
-- 更新をプッシュした後、必要に応じてPRの説明を更新し、変更に関連する返信を追加する
+- **Important** 更新をプッシュした後、**必ず** PRの説明を更新し、変更に関連する返信を追加する
 
 ```bash
 gh api repos/OWNER/REPO/pulls/NUMBER/comments/COMMENT_ID/replies \

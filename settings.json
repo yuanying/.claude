@@ -1,13 +1,29 @@
 {
   "permissions": {
     "allow": [
+      "mcp__plugin_context7_context7__get-library-docs",
+      "mcp__plugin_context7_context7__resolve-library-id",
       "Update(**/*)",
+      "Search(**/*)",
+      "Fetch(**/*)",
       "Edit(**/*)",
       "Read(**/*)",
+      "Bash(tree:*)",
+      "Bash(touch:*)",
+      "Bash(gh pr view:*)",
+      "Bash(gh pr create:*)",
+      "Bash(gh pr checks:*)",
+      "Bash(gh api:*)",
       "Bash(git status)",
       "Bash(git add:*)",
       "Bash(git commit:*)",
+      "Bash(git push:*)",
+      "Bash(uv sync:*)",
+      "Bash(uv run ruff:*)",
+      "Bash(uv run ty:*)",
+      "Bash(uv run pytest:*)",
       "Bash(wc:*)",
+      "Bash(cat:*)",
       "Bash(grep:*)",
       "Bash(mkdir -p:*)",
       "Bash(find:*)"
@@ -19,12 +35,45 @@
       "Update(/**)",
       "Edit(/**)",
       "Read(/**)",
+      "Bash(touch /:*)",
+      "Bash(touch ~/:*)",
       "Bash(mkdir -p /**)",
       "Bash(mkdir -p ~/**)",
       "Bash(rm -rf ~/**)",
       "Bash(rm -r ~/**)",
       "Bash(rm -rf /**)",
       "Bash(rm -r /**)"
+    ],
+    "ask": [
+      "Bash(git push -f:*)"
     ]
+  },
+  "hooks": {
+    "Notification": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "curl -G \"http://192.168.1.80:8989/\" --data-urlencode \"token=$NOTIFY_TOKEN\" --data-urlencode \"title=Claude Code\" --data-urlencode \"msg=入力待ち\""
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "curl -G \"http://192.168.1.80:8989/\" --data-urlencode \"token=$NOTIFY_TOKEN\" --data-urlencode \"title=Claude Code\" --data-urlencode \"msg=処理が終わったよ\""
+          }
+        ]
+      }
+    ]
+  },
+  "enabledPlugins": {
+    "context7@claude-plugins-official": true,
+    "pyright-lsp@claude-plugins-official": true
   }
 }
