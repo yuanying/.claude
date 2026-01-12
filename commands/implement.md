@@ -7,7 +7,8 @@ $ARGUMENTS
 
 ### 1. ブランチ管理
 
-**ユーザーから特に指示がない限り**、常に最新の main branch から新しい branch を作成します：
+- **ユーザーから特に指示がない限り**、常に最新の main branch から新しい branch を作成します
+- **すでに main branch からブランチが作成されていた場合**、その branch を再利用します
 
 ```bash
 # Fetch latest changes
@@ -25,13 +26,20 @@ git checkout -b <機能ブランチ名> origin/main
 - 実装の一環として編集または作成したファイルのみを追加する
 - 無関係なファイル（ビルド成果物、一時ファイル、設定ファイルなど）の追加を避ける
 - `git add .` や `git add -A` の代わりに具体的なファイルパスを使用して、誤って不要なファイルを含めないようにする
+- コミットメッセージは英語で書き、Subject は 50 文字以内、Body は72 文字以内に収める
+- コミットメッセージのSubjectは命令形で書く（例: "Add user authentication", "Fix login bug"）
 
 ```bash
 # Add only the files you edited
 git add path/to/edited/file1.ts path/to/edited/file2.ts
 ```
 
-### 3. 修正リクエストの対処
+### 3. ドキュメントの修正
+
+実装に関連するドキュメント（README、コメント、仕様書など）を適宜更新します。
+特に、実装に際して新しい設定や使用方法が追加された場合は、必ずドキュメントに反映させてください。
+
+### 4. 修正リクエストの対処
 
 ユーザーが実装済みの機能に対して修正を要求した場合、fixup commit を使用します：
 
@@ -42,6 +50,10 @@ git log --oneline
 # Create a fixup commit
 git commit --fixup <コミットハッシュ>
 ```
+
+**Important**
+- 初めてPRを作成する際には fixup commit を整理してください。
+- その後 PR のマージ前を指示するまで、fixup commit を整理しないでください。
 
 **fixup commit を使用すべき場合:**
 - ユーザーが以前に commit したコードへの変更を要求した場合
@@ -54,8 +66,9 @@ git commit --fixup <コミットハッシュ>
 各機能実装リクエストに対して：
 
 1. 現在の git status を確認する
-2. 最新の main から新しい branch を作成する（特に指示がない限り）
+2. 最新の main から新しい branch を作成する、もしくは現在のブランチを利用する（特に指示がない限り）
 3. 機能を段階的に実装する
-4. 論理的なチェックポイントで、明確なメッセージと共に commit する
-5. 修正リクエストに対しては、`git commit --fixup <commit>` を使用する
-6. すべての commit が機能的で、適切に説明されていることを確認する
+4. 実装に際して関連ドキュメントを更新する
+5. 論理的なチェックポイントで、明確なメッセージと共に commit する
+6. 修正リクエストに対しては、`git commit --fixup <commit>` を使用する
+7. すべての commit が機能的で、適切に説明されていることを確認する

@@ -3,6 +3,8 @@
     "allow": [
       "mcp__plugin_context7_context7__get-library-docs",
       "mcp__plugin_context7_context7__resolve-library-id",
+      "mcp__plugin_context7_context7__query-docs",
+      "Skill(implement)",
       "Update(**/*)",
       "Search(**/*)",
       "Fetch(**/*)",
@@ -10,9 +12,13 @@
       "Read(**/*)",
       "Bash(tree:*)",
       "Bash(touch:*)",
+      "Bash(gh issue view:*)",
+      "Bash(gh run view:*)",
       "Bash(gh pr view:*)",
       "Bash(gh pr create:*)",
       "Bash(gh pr checks:*)",
+      "Bash(gh pr status:*)",
+      "Bash(gh pr diff:*)",
       "Bash(gh api:*)",
       "Bash(git status)",
       "Bash(git fetch:*)",
@@ -21,6 +27,8 @@
       "Bash(git commit:*)",
       "Bash(git push:*)",
       "Bash(git stash:*)",
+      "Bash(git rebase:*)",
+      "Bash(git checkout:*)",
       "Bash(uv sync:*)",
       "Bash(uv run ruff:*)",
       "Bash(uv run ty:*)",
@@ -49,7 +57,8 @@
     ],
     "ask": [
       "Bash(git push -f:*)"
-    ]
+    ],
+    "defaultMode": "plan"
   },
   "hooks": {
     "Notification": [
@@ -77,6 +86,8 @@
   },
   "enabledPlugins": {
     "context7@claude-plugins-official": true,
-    "pyright-lsp@claude-plugins-official": true
+    "pyright-lsp@claude-plugins-official": true,
+    "example-skills@anthropic-agent-skills": true,
+    "dig@kuu-marketplace": true
   }
 }
