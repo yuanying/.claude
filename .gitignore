@@ -10,3 +10,5 @@ todos/
 .credentials.json
 history.jsonl
 stats-cache.json
+cache/
+paste-cache/
