@@ -12,3 +12,5 @@ history.jsonl
 stats-cache.json
 cache/
 paste-cache/
+tasks/
+teams/
