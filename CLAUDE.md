@@ -6,6 +6,10 @@
 
 ## Development Philosophy
 
+### Architecture
+
+- アーキテクチャはBDDを採用すること
+
 ### Document Strategy
 
 - **Important** ドキュメントを作成する際は、特別に必要でない限りソースコードをドキュメントに含めないこと
@@ -35,6 +39,7 @@ git checkout -b feature/your-feature-name origin/main
 
 ### Git Strategy
 
+- git コマンドで `-C` オプションを使用しないこと。
 - ユーザーからの指示で機能を追加・修正する場合は、意味のある単位でコミットを行うこと。
 - 一通りの機能が完成した段階で、ユーザーの指摘に基づき修正を行う場合は、それが大きな機能変更でない場合 `--fixup` オプションを用いてコミットすること。
 
