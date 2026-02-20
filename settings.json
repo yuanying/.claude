@@ -32,6 +32,7 @@
       "Bash(git status)",
       "Bash(go build:*)",
       "Bash(go test:*)",
+      "Bash(go vet:*)",
       "Bash(go tool golangci-lint:*)",
       "Bash(gofmt:*)",
       "Bash(grep:*)",
@@ -110,5 +111,12 @@
     "code-simplifier@claude-plugins-official": true,
     "gopls-lsp@claude-plugins-official": true
   },
-  "teammateMode": "split-pane"
+  "teammateMode": "split-pane",
+  "sandbox": {
+    "enabled": true,
+    "autoAllowBashIfSandboxed": true,
+    "allowUnsandboxedCommands": true,
+    "excludedCommands": [],
+    "enableWeakerNestedSandbox": false
+  }
 }
