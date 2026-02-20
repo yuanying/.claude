@@ -1,6 +1,9 @@
 ---
 name: pr-create
-description: GitHub の Pull Request を作成する手順書。
+description: |
+  GitHub の Pull Request を作成する手順書。
+  トリガー: "pr-create", "PR作成", "プルリクエスト作成"
+  使用場面: (1) Pull Requestの作成、(2) Draft PRの作成、(3) ブランチのPR化
 ---
 
 # GitHub Pull Request 作成手順
@@ -59,7 +62,8 @@ git log --oneline origin/main..HEAD
 fixup コミット（`fixup!` で始まるコミット）がある場合：
 
 ```bash
-git rebase -i --autosquash origin/main
+# エディタを開かずに自動実行
+GIT_SEQUENCE_EDITOR=":" git rebase -i --autosquash origin/main
 ```
 
 ## 5. リモートにプッシュ

@@ -1,6 +1,9 @@
 ---
 name: pr-merge
-description: GitHub Pull Request をマージする手順書。マージ方法（merge, squash, rebase）を選択可能。
+description: |
+  GitHub Pull Request をマージする手順書。マージ方法（merge, squash, rebase）を選択可能。
+  トリガー: "pr-merge", "PRマージ", "プルリクエストマージ"
+  使用場面: (1) PRのマージ実行、(2) マージ方法の選択、(3) fixupコミット整理後のマージ
 ---
 
 # GitHub Pull Request マージ手順
@@ -39,7 +42,8 @@ git log --oneline origin/main..HEAD
 fixup コミット（`fixup!` で始まるコミット）がある場合は整理する：
 
 ```bash
-git rebase -i --autosquash origin/main
+# エディタを開かずに自動実行
+GIT_SEQUENCE_EDITOR=":" git rebase -i --autosquash origin/main
 ```
 
 整理後、force push が必要な場合：
@@ -65,20 +69,17 @@ gh pr checks
 
 | 引数 | コマンド |
 |------|----------|
-| `merge`（デフォルト） | `gh pr merge --merge` |
-| `squash` | `gh pr merge --squash` |
-| `rebase` | `gh pr merge --rebase` |
+| `merge`（デフォルト） | `gh pr merge --merge --no-edit` |
+| `squash` | `gh pr merge --squash --no-edit` |
+| `rebase` | `gh pr merge --rebase --no-edit` |
 
 ```bash
 # merge（デフォルト）
 gh pr merge --merge
-
 # squash
 gh pr merge --squash
-
 # rebase
-gh pr merge --rebase
-```
+gh pr merge --rebase```
 
 ## 重要
 

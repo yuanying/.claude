@@ -1,6 +1,9 @@
 ---
 name: issue-fix
-description: GitHub Issue を修正し、関連する PR を作成する手順書。
+description: |
+  GitHub Issue を修正し、関連する PR を作成する手順書。
+  トリガー: "issue-fix", "Issue修正", "イシュー修正"
+  使用場面: (1) GitHub Issueの修正実装、(2) Issue関連のPR作成、(3) バグ修正ワークフロー
 ---
 
 # GitHub Issue 修正手順
@@ -116,8 +119,8 @@ PR 作成前に fixup コミットを整理する:
 # fixup コミットがあるか確認
 git log --oneline origin/main..HEAD
 
-# fixup コミットがある場合は整理
-git rebase -i --autosquash origin/main
+# fixup コミットがある場合は整理（エディタを開かずに自動実行）
+GIT_SEQUENCE_EDITOR=":" git rebase -i --autosquash origin/main
 ```
 
 ### リモートにプッシュ

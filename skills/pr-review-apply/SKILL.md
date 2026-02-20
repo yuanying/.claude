@@ -1,6 +1,9 @@
 ---
 name: pr-review-apply
-description: GitHub Pull Requestのレビュー内容を適用する手順書。PRレビューのフィードバックをコードに反映する際に使用。
+description: |
+  GitHub Pull Requestのレビュー内容を適用する手順書。PRレビューのフィードバックをコードに反映する際に使用。
+  トリガー: "pr-review-apply", "レビュー適用", "レビュー反映"
+  使用場面: (1) PRレビューのフィードバック反映、(2) レビューコメントへの対応、(3) コードレビュー修正
 ---
 
 # PRレビュー内容の適用手順
