@@ -69,9 +69,9 @@ gh pr checks
 
 | 引数 | コマンド |
 |------|----------|
-| `merge`（デフォルト） | `gh pr merge --merge --no-edit` |
-| `squash` | `gh pr merge --squash --no-edit` |
-| `rebase` | `gh pr merge --rebase --no-edit` |
+| `merge`（デフォルト） | `gh pr merge --merge` |
+| `squash` | `gh pr merge --squash` |
+| `rebase` | `gh pr merge --rebase` |
 
 ```bash
 # merge（デフォルト）
