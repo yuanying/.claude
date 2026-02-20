@@ -129,6 +129,16 @@ GIT_SEQUENCE_EDITOR=":" git rebase -i --autosquash origin/main
 git push -u origin <branch-name>
 ```
 
+### 既存PRの確認
+
+PR作成前に、現在のブランチに既にPRが存在しないか確認する：
+
+```bash
+gh pr view
+```
+
+PRが既に存在する場合は、新規作成せず既存PRを更新する。
+
 ## 7. PR の作成
 
 Issue と関連付けた PR を作成する。

@@ -14,9 +14,19 @@ description: |
 git branch --show-current
 ```
 
-## 2. main ブランチにいる場合のみ：新しいブランチを作成
+## 2. 既存PRの確認
 
-### 2-1. 変更があるかを確認
+現在のブランチに既にPRが存在するか確認する：
+
+```bash
+gh pr view
+```
+
+PRが既に存在する場合は、ユーザーに通知し、新規作成するか既存PRを更新するか確認する。
+
+## 3. main ブランチにいる場合のみ：新しいブランチを作成
+
+### 3-1. 変更があるかを確認
 
 ```bash
 git status --porcelain
@@ -24,7 +34,7 @@ git status --porcelain
 
 変更がない場合はユーザーに通知して終了する。
 
-### 2-2. 新しいブランチを作成
+### 3-2. 新しいブランチを作成
 
 変更がある場合、変更内容に基づいて適切なブランチ名を決定する。
 
@@ -38,7 +48,7 @@ git fetch origin
 git checkout -b <branch-name> origin/main
 ```
 
-## 3. 未コミットの変更をコミット
+## 4. 未コミットの変更をコミット
 
 ```bash
 git status --porcelain
@@ -51,7 +61,7 @@ git add <files>
 git commit -m "<commit-message>"
 ```
 
-## 4. fixup コミットの整理
+## 5. fixup コミットの整理
 
 fixup コミットが残っている場合は、`autosquash` で整理する。
 
@@ -66,13 +76,13 @@ fixup コミット（`fixup!` で始まるコミット）がある場合：
 GIT_SEQUENCE_EDITOR=":" git rebase -i --autosquash origin/main
 ```
 
-## 5. リモートにプッシュ
+## 6. リモートにプッシュ
 
 ```bash
 git push -u origin <branch-name>
 ```
 
-## 6. Pull Request を作成
+## 7. Pull Request を作成
 
 **引数の確認:** `$ARGUMENTS`
 
