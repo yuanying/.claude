@@ -1,5 +1,9 @@
 ---
-description: "実装の詳細とガイドライン。"
+name: implement
+description: |
+  実装の詳細とガイドライン。
+  トリガー: "implement", "実装して", "実装"
+  使用場面: (1) 新機能の実装、(2) 既存機能の拡張、(3) 実装ワークフロー管理
 ---
 $ARGUMENTS
 

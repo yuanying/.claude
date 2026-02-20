@@ -55,6 +55,12 @@
       "Search(**/*)",
       "Skill(codex:*)",
       "Skill(implement)",
+      "Skill(issue-create)",
+      "Skill(issue-fix)",
+      "Skill(pr-create)",
+      "Skill(pr-merge)",
+      "Skill(pr-review-apply)",
+      "Skill(git-commit)",
       "Update(**/*)",
       "Web Search(*)"
     ],

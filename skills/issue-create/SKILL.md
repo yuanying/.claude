@@ -1,6 +1,9 @@
 ---
 name: issue-create
-description: GitHub の Issue を作成する手順書。
+description: |
+  GitHub の Issue を作成する手順書。
+  トリガー: "issue-create", "Issue作成", "イシュー作成"
+  使用場面: (1) バグ報告の作成、(2) 機能追加の提案、(3) 改善提案の作成
 ---
 
 # GitHub Issue 作成手順
